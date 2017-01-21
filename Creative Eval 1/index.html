@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Creative Eval 1</title> 
+        <link rel="stylesheet" href="main.css">
+        	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+            <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
+            <script src='slidetounlock.js'></script>
+        
+        <script>
+            $(function() {
+                $('body').removeClass('fade-out');
+            });
+        </script>
+        
+    </head> 
+    <body>
+        
+        <script>document.body.className += ' fade-out';</script>
+        
+        <div id="original">
+            <div id="mainTitle">
+                <font size="7">Creative Evalualtion</font><br>
+                <font size="5">Benjamin Horrocks &amp; Scott McKenzie</font>
+            </div>
+
+            <div id="page-wrap">
+                <div id="well">
+                    <h2><strong id="slider"></strong><span class="paddingLeft">slide to unlock</span></h2>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- ANYTHING ELSE GOES IN HERE-->
+        <div id="afterSlide">
+            <h1>This is the stuff we want to show after we slide</h1>
+        </div>
+
+    </body> 
+</html>
