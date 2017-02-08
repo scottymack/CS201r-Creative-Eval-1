@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>Mashape Query</title>
+  <script>
+	function doIt() {
+        var fname = $("#name1").val();
+        var sname = $("#name2").val();
+        
+    var output = $.ajax({
+    url: 'https://love-calculator.p.mashape.com/getPercentage?fname='+ fname + '&sname=' + sname, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+    data: {}, // Additional parameters here
+    dataType: 'json',
+    success: function(data) {
+    	//
+        //Change data.source to data.something , where something is whichever part of the object you want returned.
+        //To see the whole object you can output it to your browser console using:
+        console.log(data);
+       	document.getElementById("output").innerHTML = "The Percentage is: " + data['percentage'] + "%"; 
+        document.getElementById("result").innerHTML = "The Result is: " + data['result']; 
+        },
+    error: function(err) { alert(err); },
+    beforeSend: function(xhr) {
+    xhr.setRequestHeader("X-Mashape-Authorization", "fqza6pxQmPmshmRCNlZ4GaXmREHep1DUPL0jsnjb6QOmJb7KXz"); // Enter here your Mashape key
+    }
+});
+  
+
+}
+
+</script>
+</head>
+<body>
+
+  Enter the first name: <input type="text" id="name1" value=""> 
+  Enter the second name: <input type="text" id="name2" value="">
+    
+  <button onclick="doIt()">Calculate the Love</button>
+  <div id="output">The Percentage is:</div>
+  <div id="result">The Result is:</div>
+  
+</body>
+</html>
